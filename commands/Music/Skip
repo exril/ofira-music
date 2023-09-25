@@ -1,0 +1,55 @@
+const Command = require("../../abstract/Command.js");
+
+module.exports = class Skip extends Command {
+  constructor(client) {
+    super(client, {
+      name: "skip",
+      description: "Removes duplicate songs from the queue",
+      category: 'Music',
+      aliases: ["s"],
+    });
+  }
+
+  async run(client, msg, args) {
+    if (!this.playerPerms.canStop(msg)) return;
+
+    let dispatcher = this.client.players.get(msg.guild.id);
+
+    const voiceChannel = msg.guild.voice.channel.members.filter(m => m.user.bot ? !m.user.bot : m);
+    
+    const memberCount = voiceChannel.size;
+
+    const permissions = msg.member.hasPermission('ADMINISTRATOR')
+
+    if (!permissions && memberCount > 2) {
+      const required = Math.ceil(memberCount / 2);
+      
+      if (dispatcher.skips.has(msg.author.id)) return this.client.send(msg.channel.id, {
+        embed: {
+          color: this.client.util.color.error,
+          title: `${this.client.util.emoji.error} | You have already voted to skip the song!`,
+          description: `Votes required: \`${dispatcher.skips.size}/${required}\``
+        }});
+        
+        dispatcher.skips.add(msg.author.id);
+          
+        const votes = dispatcher.skips.size;
+
+        if(votes >= required) {
+          msg.react(this.client.util.emoji.skip).catch();
+          dispatcher.stop();
+        }
+
+        return this.client.send(msg.channel.id, {
+          embed: {
+            color: this.client.util.color.pirmary,
+            title: `${this.client.util.emoji.skip} | Voted to skip`,
+            description: `Votes required: ${dispatcher.skips.size}/${required}`
+        }});
+    }
+        
+      msg.react(client.emoji.skip).catch();
+        
+      await dispatcher.stop();
+  }
+}
