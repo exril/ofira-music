@@ -1,0 +1,33 @@
+{
+  "name": "ofira-chan",
+  "version": "3.0.8",
+  "private": true,
+  "description": "my frist discord muisc bot based on shoukaku",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@top-gg/sdk": "^3.1.1",
+    "axios": "^0.21.1",
+    "bufferutil": "^4.0.3",
+    "dayjs": "*",
+    "discord.js": "^12.5.3",
+    "erlpack": "github:discordapp/erlpack",
+    "express": "^4.17.1",
+    "kurasuta": "^2.2.3",
+    "lavasfy": "github:Allvaa/lava-spotify#c5f0bc4a09b1b407c2ac272f1d05f1a5f16438d1",
+    "libsodium": "^0.7.9",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
+    "mongoose": "^5.12.3",
+    "shoukaku": "github:Deivu/Shoukaku#master",
+    "utf-8-validate": "^5.0.5",
+    "util": "^0.12.4",
+    "zlib-sync": "^0.1.7"
+  },
+  "devDependencies": {
+    "eslint": "^7.23.0"
+  }
+}
