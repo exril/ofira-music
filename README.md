@@ -1,8 +1,9 @@
 # ofira-music
 A Discord Music bot Javascript
 
-# How to Run this code 
-Ohh swear heart you need a tutorial for this ??
-Shut up and stop skidding learn some actual skill 
+# Installation
 
-Run it yourself 
+First make sure you have installed NodeJS 
+
+For windows = https://nodejs.org/en
+For Ubuntu = ```sudo apt-get install nodejs```
