@@ -23,9 +23,10 @@ Then To run the code
 Navigate to config.json and update them 
 You would Require the following things
 
-Discord Bot Token 
-DBL ( TOP.GG TKN ) ( Not Necessary) 
-Spotify Client ID && Secret 
-MONGO DB URI = https://mongodb.com/ 
+- Discord Bot Token 
+- DBL ( TOP.GG TKN ) ( Not Necessary) 
+- Spotify Client ID && Secret 
+- MONGO DB URI = https://mongodb.com/
+- LavaLink Nodes = https://github.com/lavalink-devs/Lavalink
 
 If you face issues while running / installation join https://discord.gg/79dev
