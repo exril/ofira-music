@@ -29,4 +29,4 @@ You would Require the following things
 - MONGO DB URI = https://mongodb.com/
 - LavaLink Nodes = https://github.com/lavalink-devs/Lavalink
 
-If you face issues while running / installation join https://discord.gg/79dev
+If you face issues while running / installation join https://discord.com/invite/MBC5UJtDP7
